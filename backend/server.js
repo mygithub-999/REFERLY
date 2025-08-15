@@ -15,7 +15,7 @@ const app = express();
 // mongoose.connect(process.env.MONGODB_URI);
 
 app.use(cors({
-  origin: ['http://localhost:5000','https://referlyapp.netlify.app'],
+  origin: ['http://localhost:5000','https://referlyapp.netlify.app','https://689f7bba984b3100aba39c20--referlyapp.netlify.app'],
   credentials: true               
 }));
 app.use(express.json())
