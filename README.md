@@ -1,1 +1,2 @@
-Visit (Referly)[https://referlyapp.netlify.app/]
+Visit [Referly](https://referlyapp.netlify.app/)
+
