@@ -3,8 +3,8 @@ const jwt=require('jsonwebtoken');
 const handleLogout=(req,res)=>{
     res.clearCookie('jwt',{
         httpOnly:true,
-        secure:false,
-        sameSite:"lax"
+        secure:true,
+        sameSite:"None"
     });
     res.sendStatus(200);
 }

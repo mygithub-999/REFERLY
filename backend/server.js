@@ -29,7 +29,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false 
+    secure: true 
   }
 }));
 
@@ -67,8 +67,8 @@ app.get('/auth/google/callback',
 
     res.cookie('jwt', refreshToken, {
       httpOnly: true,
-      sameSite: 'Lax', 
-      secure: false,   
+      sameSite: 'None', 
+      secure: true,   
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
