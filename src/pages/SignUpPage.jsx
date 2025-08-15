@@ -32,6 +32,7 @@ const SignUpPage = () => {
     }
     console.log(form.name,form.email);
     try{
+      console.log("API URL:", process.env.REACT_APP_API_URL);
       const res=await axios.post(`${process.env.REACT_APP_API_URL}/register`,form);
       const userId=res.data.userId;
       // localStorage.setItem("userId", userId);
