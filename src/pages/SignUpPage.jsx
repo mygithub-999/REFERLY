@@ -32,8 +32,8 @@ const SignUpPage = () => {
     }
     console.log(form.name,form.email);
     try{
-      console.log("API URL:", process.env.VITE_API_URL);
-      const res=await axios.post(`${process.env.VITE_API_URL}/register`,form);
+      console.log("API URL:", import.meta.env.VITE_API_URL);
+      const res=await axios.post(`${import.meta.env.VITE_API_URL}/register`,form);
       const userId=res.data.userId;
       // localStorage.setItem("userId", userId);
       // localStorage.setItem("name", res.data.name);

@@ -13,7 +13,7 @@ const AppInitializer = () => {
 
     if (!token) {
       try {
-        const res = await axios.get(`${process.env.VITE_API_URL}/refresh`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/refresh`, {
           withCredentials: true
         });
 
@@ -31,7 +31,7 @@ const AppInitializer = () => {
 
       // if (!token) {
       //   try {
-      //     const res = await axios.get('${process.env.VITE_API_URL}/refresh', {
+      //     const res = await axios.get('${import.meta.env.VITE_API_URL}/refresh', {
       //       withCredentials: true,
       //     });
       //   console.log("REFRESH RESPONSE:", res.data);

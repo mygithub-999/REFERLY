@@ -29,7 +29,7 @@ const SignInPage = () => {
     }
     console.log(form.email);
     try{
-      const res=await axios.post(`${process.env.VITE_API_URL}/auth`,form,{
+      const res=await axios.post(`${import.meta.env.VITE_API_URL}/auth`,form,{
         withCredentials: true
       }); //Hold
       const userId=res.data.userId;

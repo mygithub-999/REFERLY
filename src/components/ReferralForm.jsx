@@ -11,7 +11,7 @@ const ReferralForm = ({ userId }) => {
 
     try {
       const res = await axios.post(
-        `${process.env.VITE_API_URL}/referral/${userId}/yourapp`,
+        `${import.meta.env.VITE_API_URL}/referral/${userId}/yourapp`,
         { appname_code: referralCode },
         {
           headers: {

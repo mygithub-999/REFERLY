@@ -19,9 +19,9 @@ const handleRefreshToken = async(req, res) => {
   }
 
   // console.log("Cookie JWT:", req.cookies.jwt);
-  // console.log("Secret being used:", process.env.REFRESH_TOKEN);
+  // console.log("Secret being used:", import.meta.env.REFRESH_TOKEN);
 
-  jwt.verify(refreshToken, process.env.REFRESH_TOKEN, (err, decoded) => {
+  jwt.verify(refreshToken, import.meta.env.REFRESH_TOKEN, (err, decoded) => {
     if (err) {
       console.error("JWT verification error:", err);
       return res.status(403).json({'message':'Invalid User'});
@@ -32,7 +32,7 @@ const handleRefreshToken = async(req, res) => {
         name: foundUser.name,
         email: foundUser.email,
       },
-      process.env.ACCESS_TOKEN,
+      import.meta.env.ACCESS_TOKEN,
       { expiresIn: '1d' }
     );
 

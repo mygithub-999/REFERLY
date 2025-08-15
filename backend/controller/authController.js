@@ -32,13 +32,13 @@ const handleLogin = async (req, res) => {
       name: foundUser.name,
       email: foundUser.email,
     },
-    process.env.ACCESS_TOKEN,
+    import.meta.env.ACCESS_TOKEN,
     { expiresIn: '90m' }
   );
 
   const refreshToken = jwt.sign(
     { email: foundUser.email },
-    process.env.REFRESH_TOKEN,
+    import.meta.env.REFRESH_TOKEN,
     { expiresIn: '1d' }
   );
 
