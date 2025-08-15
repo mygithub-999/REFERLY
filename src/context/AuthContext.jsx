@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
 
   const logout = async() => {
   try {
-    await axios.post(`${process.env.REACT_APP_API_URL}/logout`, {}, { withCredentials: true });
+    await axios.post(`${process.env.VITE_API_URL}/logout`, {}, { withCredentials: true });
   } catch(err) {
     console.log("Logout API failed", err);
   }
