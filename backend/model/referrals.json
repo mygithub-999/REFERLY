@@ -1,0 +1,38 @@
+[
+  {
+    "id": "0357874a-9257-4061-bdb1-c8a846b183af",
+    "userId": "1752179552978",
+    "appname": "ajio",
+    "code": "XTADFG",
+    "createdAt": "2025-07-12T16:55:02.802Z",
+    "uses": 2,
+    "maxUses": 5
+  },
+  {
+    "id": "cca1340d-4842-48ea-90c6-f7834c4dae1b",
+    "userId": "1752179552978",
+    "appname": "ajio",
+    "code": "kjnn3enf",
+    "createdAt": "2025-07-12T16:55:40.031Z",
+    "uses": 3,
+    "maxUses": 5
+  },
+  {
+    "id": "1458874d-b2d6-42bf-ac0d-582225b69297",
+    "userId": "1752179552978",
+    "appname": "ajio",
+    "code": "kgnij",
+    "createdAt": "2025-07-12T16:55:46.240Z",
+    "uses": 3,
+    "maxUses": 5
+  },
+  {
+    "id": "134d9da3-c801-462e-ace4-1050694c6eed",
+    "userId": "1753887938754",
+    "appname": "zomato",
+    "code": "XYZDFR",
+    "createdAt": "2025-07-30T15:06:42.532Z",
+    "uses": 4,
+    "maxUses": 5
+  }
+]
