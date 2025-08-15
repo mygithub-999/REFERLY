@@ -30,7 +30,7 @@ const AppDetailPage = () => {
       }
 
       try {
-        const res = await axios.get(`http://localhost:8000/user/${id}`, {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -53,7 +53,7 @@ const AppDetailPage = () => {
 
   const fetchReferral=async()=>{
     try{
-      const res=await axios.post(`http://localhost:8000/referral/yourapp`,
+      const res=await axios.post(`${process.env.REACT_APP_API_URL}/referral/yourapp`,
       {
         appname:sendData.toLowerCase().trim()
       },

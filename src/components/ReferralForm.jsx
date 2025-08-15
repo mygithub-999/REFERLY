@@ -11,7 +11,7 @@ const ReferralForm = ({ userId }) => {
 
     try {
       const res = await axios.post(
-        `http://localhost:8000/referral/${userId}/yourapp`,
+        `${process.env.REACT_APP_API_URL}/referral/${userId}/yourapp`,
         { appname_code: referralCode },
         {
           headers: {

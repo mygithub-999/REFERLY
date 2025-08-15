@@ -13,7 +13,7 @@ const AppInitializer = () => {
 
     if (!token) {
       try {
-        const res = await axios.get('http://localhost:8000/refresh', {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/refresh`, {
           withCredentials: true
         });
 
@@ -31,7 +31,7 @@ const AppInitializer = () => {
 
       // if (!token) {
       //   try {
-      //     const res = await axios.get('http://localhost:8000/refresh', {
+      //     const res = await axios.get('${process.env.REACT_APP_API_URL}/refresh', {
       //       withCredentials: true,
       //     });
       //   console.log("REFRESH RESPONSE:", res.data);

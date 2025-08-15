@@ -30,7 +30,7 @@ const UserPage = () => {
     }
 
     try {
-      const res = await axios.get(`http://localhost:8000/user/${id}`, {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/user/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUser(res.data);
