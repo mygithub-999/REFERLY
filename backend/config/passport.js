@@ -4,9 +4,9 @@ const User = require('../model/userDB');
 
 passport.use(new GoogleStrategy(
   {
-    clientID:     import.meta.env.GOOGLE_CLIENT_ID,
-    clientSecret: import.meta.env.GOOGLE_CLIENT_SECRET,
-    callbackURL:  import.meta.env.GOOGLE_CALLBACK_URL
+    clientID:     process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL:  process.env.GOOGLE_CALLBACK_URL
   },
   async (_googleAccess, _googleRefresh, profile, done) => {
     try {

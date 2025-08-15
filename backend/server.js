@@ -3,7 +3,7 @@ const cors=require('cors');
 const cookieParser=require('cookie-parser');
 const path=require('path');
 const session=require('express-session');
-const port=import.meta.env.PORT || 8000;
+const port=process.env.PORT || 8000;
 const mongoose=require('mongoose');
 const dBconn=require('./config/dBconn');
 const jwt=require('jsonwebtoken');
@@ -12,7 +12,7 @@ dBconn();
 const passport = require('./config/passport');
 const app = express();
 
-// mongoose.connect(import.meta.env.MONGODB_URI);
+// mongoose.connect(process.env.MONGODB_URI);
 
 app.use(cors({
   origin: ['http://localhost:5000','https://referlyapp.netlify.app'],
@@ -25,7 +25,7 @@ app.use(cookieParser());
 //Passport logic begins
 
 app.use(session({
-  secret: import.meta.env.SESSION_SECRET || 'dev-secret', 
+  secret: process.env.SESSION_SECRET || 'dev-secret', 
   resave: false,
   saveUninitialized: false,
   cookie: {
@@ -39,12 +39,12 @@ app.use(passport.session());
 function issueTokens(user) {
   const accessToken = jwt.sign(
     { id: user._id, name: user.name, email: user.email },
-    import.meta.env.ACCESS_TOKEN,
+    process.env.ACCESS_TOKEN,
     { expiresIn: '1d' }
   );
   const refreshToken = jwt.sign(
     { id: user._id },
-    import.meta.env.REFRESH_TOKEN,
+    process.env.REFRESH_TOKEN,
     { expiresIn: '7d' }
   );
   return { refreshToken };

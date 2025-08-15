@@ -6,7 +6,7 @@ verifyJWT=(req, res, next)=>{
 
   if (!token) return res.status(401).json({ message: 'Access token missing' });
 
-  jwt.verify(token, import.meta.env.ACCESS_TOKEN, (err, user) => {
+  jwt.verify(token, process.env.ACCESS_TOKEN, (err, user) => {
     if (err) {
       console.error('JWT verification error:', err);
       return res.status(403).json({ message: 'LogOut and try again' });

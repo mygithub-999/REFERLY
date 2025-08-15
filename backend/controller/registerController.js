@@ -43,13 +43,13 @@ const handleNewUser=async(req,res)=>{
         // );
         const accessToken=jwt.sign(
             {id:newUser._id, name:newUser.name,email:newUser.email},
-            import.meta.env.ACCESS_TOKEN,
+            process.env.ACCESS_TOKEN,
             {expiresIn:'1d'}
         )
 
         const refreshToken = jwt.sign(
             { id: newUser._id, email: newUser.email },
-            import.meta.env.REFRESH_TOKEN,
+            process.env.REFRESH_TOKEN,
             { expiresIn: '7d' }
         );
 
