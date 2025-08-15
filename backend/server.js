@@ -15,7 +15,7 @@ const app = express();
 // mongoose.connect(process.env.MONGODB_URI);
 
 app.use(cors({
-  origin: 'http://localhost:5000', 
+  origin: ['http://localhost:5000','https://referlyapp.netlify.app/'],
   credentials: true               
 }));
 app.use(express.json())
@@ -57,7 +57,7 @@ app.get('/auth/google',
 );
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: 'http://localhost:5000/signup' }),
+  passport.authenticate('google', { failureRedirect: 'https://referlyapp.netlify.app/signup' }),
   async (req, res) => {
     const user = req.user;
     const { refreshToken } = issueTokens(user);
@@ -72,7 +72,7 @@ app.get('/auth/google/callback',
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
-    res.redirect(`http://localhost:5000/user/${user._id}`);
+    res.redirect(`https://referlyapp.netlify.app/user/${user._id}`);
 
     // res.status(201).json({ 
     //          userId:user._id , 
